@@ -90,6 +90,7 @@ class PersistentState(context: Context) : SimpleKrate(context), KoinComponent {
         const val CUSTOM_LAN_MODE_IPS_CHANGED = "custom_lan_mode_ip_changed"
 
         const val FIREWALL_BUBBLE = "pref_firewall_bubble_enabled"
+        const val USQUE_WARP_ENABLED = "usque_warp_enabled"
     }
 
     // when vpn is started by the user, this is set to true; set to false when user stops
@@ -426,7 +427,8 @@ class PersistentState(context: Context) : SimpleKrate(context), KoinComponent {
 
     // set vpn builder to metered/unmetered
     var setVpnBuilderToMetered by booleanPref("set_vpn_builder_to_metered").withDefault<Boolean>(false)
-
+// WARP tunnel enabled state
+    var usqueWarpEnabled by booleanPref("usque_warp_enabled").withDefault<Boolean>(false)
     // debug settings, panic random
     var panicRandom by booleanPref("panic_random").withDefault<Boolean>(false)
 
